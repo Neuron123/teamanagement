@@ -1,0 +1,16 @@
+1. Fertilizer calculations
+    - based on totals
+
+2. Farmer dashboard
+    - line graph
+    - per day
+
+3. Download receipt for daily/ weekly / monthly
+
+4. Clerk to have all grower numbers
+5. Admin 
+    - make card clickable
+    - daily records
+    - delivered vs undelivered
+
+6. Landing page

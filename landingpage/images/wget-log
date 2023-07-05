@@ -1,0 +1,11 @@
+--2023-07-04 17:57:43--  https://images.unsplash.com/photo-1605000797499-95a51c5269ae?crop=entropy
+Resolving images.unsplash.com (images.unsplash.com)... 199.232.58.208, 2a04:4e42:f::720
+Connecting to images.unsplash.com (images.unsplash.com)|199.232.58.208|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2540897 (2.4M) [image/jpeg]
+Saving to: ‘photo-1605000797499-95a51c5269ae?crop=entropy’
+
+                photo-160500079   0%[                                                       ]       0  --.-KB/s                              photo-1605000797   1%[                                                       ]  40.00K   196KB/s                             photo-16050007974   2%[>                                                      ]  72.00K   174KB/s                            photo-160500079749   6%[==>                                                    ] 168.00K   271KB/s                           photo-1605000797499  13%[======>                                                ] 344.00K   420KB/s                          photo-1605000797499-  31%[================>                                      ] 771.00K   754KB/s                         photo-1605000797499-9  65%[===================================>                   ]   1.59M  1.30MB/s               photo-1605000797499-95a51c5269a 100%[======================================================>]   2.42M  1.79MB/s    in 1.4s    
+
+2023-07-04 17:57:47 (1.79 MB/s) - ‘photo-1605000797499-95a51c5269ae?crop=entropy’ saved [2540897/2540897]
+

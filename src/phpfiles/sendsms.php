@@ -6,8 +6,8 @@ function sendSMS($message, $phoneNumber, $serviceID = 1) {
 
     // Bongasms API credentials
     $apiClientID = '144';
-    $key = 'H';
-    $secret = 'p';
+    $key = 'HYLkgX8k0O3bpV2';
+    $secret = 'psBcEDXFsACiU4B2F6JvBUXAlswgcc';
 
     // Prepare the request data
     $data = array(

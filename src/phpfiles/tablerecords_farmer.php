@@ -3,7 +3,6 @@ session_start();
 include "messages.php";
 ?>
 
-
 <?php
 include "header.php";
 ?>
@@ -66,7 +65,6 @@ $conn->close();
     <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
 
-
         <?php
         include "navbar.php";
         ?>
@@ -105,7 +103,6 @@ $conn->close();
                             </nav>
                         </div>
                     </div>
-
                 </div>
             </div>
             <!-- ============================================================== -->
@@ -123,8 +120,6 @@ $conn->close();
                     <div class="col-sm-12">
                         <div class="card">
                             <div class="card-body">
-
-
                                 <h4 class="card-title">Tea Records</h4>
                                 <h6 class="card-subtitle"></h6>
                                 <div class="table-responsive">
@@ -141,6 +136,8 @@ $conn->close();
                                             <?php
                                             // Initialize the row number counter
                                             $rowNumber = 1;
+                                            $totalAmount = 0;
+
                                             // Iterate over the fetched records
                                             foreach ($records as $record) {
                                                 ?>
@@ -165,12 +162,11 @@ $conn->close();
                                                 $totalAmount += $record['quantity'];
                                             }
                                             ?>
-
                                         </tbody>
                                     </table>
-                                    <h2 class="text-right">Totals:<?php echo $totalAmount ?></h2>
-
-
+                                    <h2 class="text-right">Totals:
+                                        <?php echo $totalAmount ?>
+                                    </h2>
                                 </div>
                             </div>
                         </div>
@@ -206,8 +202,7 @@ $conn->close();
     <!-- ============================================================== -->
     <!-- ============================================================== -->
     <!-- All Jquery -->
-    <!-- ============================================================== -->
-    <script src="../../assets/plugins/jquery/dist/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="../../assets/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/app-style-switcher.js"></script>
@@ -218,21 +213,47 @@ $conn->close();
     <!--Custom JavaScript -->
     <script src="../js/custom.js"></script>
     <script src="../../assets/plugins/datatable.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.70/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.70/vfs_fonts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <script src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.print.min.js"></script>
+
     <script>
-        $(document).ready(function () {
-            var t = $('#recordtable').DataTable();
-            var counter = 1;
-
-            $('#addRow').on('click', function () {
-                t.row.add([counter + '.1', counter + '.2', counter + '.3', counter + '.4', counter + '.5']).draw(false);
-
-                counter++;
-            });
-
-            // Automatically add a first row of data
-            $('#addRow').click();
+    $(document).ready(function () {
+        var t = $('#recordtable').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                {
+                    extend: 'pdfHtml5',
+                    customize: function (doc) {
+                        doc.content[0].text = 'My Tea Records';
+                        doc.pageMargins = [40, 40, 40, 40];
+                        doc.defaultStyle.fontSize = 16; // Increase the font size here
+                        doc.defaultStyle.alignment = 'center';
+                        doc.styles.tableHeader.fontSize = 16;
+                        doc.content[1].table.widths = ['15%', '25%', '25%', '35%'];
+                        doc.pageSize = 'A0';
+                        // Add padding to all cells
+                        doc.content[1].table.body.forEach(function (row) {
+                            row.forEach(function (cell) {
+                                cell.margin = [10, 10, 10, 10];
+                            });
+                        });
+                    }
+                },
+                'copyHtml5',
+                'excelHtml5',
+                'csvHtml5'
+            ]
         });
-    </script>
+    });
+</script>
+
+
+
 </body>
 
 </html>

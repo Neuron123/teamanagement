@@ -133,7 +133,9 @@ $conn->close();
                             <div class="card-body">
                                 <h4 class="card-title">Today Sales</h4>
                                 <div class="text-start">
-                                    <h2 class="font-light mb-0"> <?php echo $_SESSION["todaysum"]; ?> </h2>
+                                    <h2 class="font-light mb-0">
+                                        <?php echo $_SESSION["todaysum"]; ?>
+                                    </h2>
                                     <span class="text-muted">Todays Kgs</span>
                                 </div>
                                 <span class="text-success"></span>
@@ -152,7 +154,9 @@ $conn->close();
                             <div class="card-body">
                                 <h4 class="card-title">Total Sales</h4>
                                 <div class="text-start">
-                                    <h2 class="font-light mb-0"> <?php echo $_SESSION["totalsum"]; ?></h2>
+                                    <h2 class="font-light mb-0">
+                                        <?php echo $_SESSION["totalsum"]; ?>
+                                    </h2>
                                     <span class="text-muted">Total Kgs</span>
                                 </div>
                                 <span class="text-info"></span>
@@ -175,9 +179,10 @@ $conn->close();
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Kgs vs Days</h4>
-                                
+
                                 <!-- bar graph here -->
-                                <canvas id="barGraph"></canvas>
+                                <canvas id="lineGraph"></canvas>
+
                             </div>
                         </div>
                     </div>
@@ -226,20 +231,20 @@ $conn->close();
     <script src="../../assets/plugins/chartjs/Chart.js"></script>
     <script>
         $(function () {
-            // Bar graph data
+            // Line graph data
             var labels = <?php echo json_encode($labels); ?>;
             var data = <?php echo json_encode($data); ?>;
-            
-            // Create a bar graph
-            var ctx = document.getElementById('barGraph').getContext('2d');
-            var barGraph = new Chart(ctx, {
-                type: 'bar',
+
+            // Create a line graph
+            var ctx = document.getElementById('lineGraph').getContext('2d');
+            var lineGraph = new Chart(ctx, {
+                type: 'line',
                 data: {
                     labels: labels,
                     datasets: [{
                         label: 'Kgs',
                         data: data,
-                        backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                        fill: false,
                         borderColor: 'rgba(75, 192, 192, 1)',
                         borderWidth: 1
                     }]
@@ -253,6 +258,8 @@ $conn->close();
                 }
             });
         });
+
     </script>
 </body>
+
 </html>

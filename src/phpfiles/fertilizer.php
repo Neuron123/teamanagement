@@ -40,6 +40,7 @@ if ($stmt) {
         // Calculate the average quantity
         $averageQuantity = $totalQuantity / $rowCount;
         $_SESSION['average_kgs'] = $averageQuantity;
+        $_SESSION['total_kgs'] = $totalQuantity;
 
     } else {
         // No rows found
@@ -198,7 +199,7 @@ $conn->close();
                                                         </label>
                                                         <input type="number" name="quantity" class="form-control"
                                                             id="inputkgs" min="1"
-                                                            value="<?php echo $_SESSION['average_kgs'] ?>" readonly required/>
+                                                            value="<?php echo $_SESSION['total_kgs'] ?>" readonly required/>
                                                     </div>
 
                                                     <?php
@@ -217,7 +218,7 @@ $conn->close();
 
                                                     <div class="mb-3">
                                                         <label for="inputRate" class="form-label">
-                                                            Rate per Kgs
+                                                            Rate per 100 Kgs
                                                         </label>
                                                         <input type="number" name="rate" class="form-control"
                                                             id="inputRate" min="1" value="<?php echo $ratePerKgs ?>"
@@ -226,12 +227,12 @@ $conn->close();
 
                                                     <!-- Calculate the total amount based on quantity and rate_per_kgs -->
                                                     <?php
-                                                    $totalAmount = $_SESSION['average_kgs'] * $ratePerKgs;
+                                                    $totalAmount = $_SESSION['total_kgs'] * ($ratePerKgs / 100);
                                                     ?>
 
                                                     <div class="mb-3">
                                                         <label for="inputAmount" class="form-label">
-                                                            Total Amount
+                                                            Total No of Bags
                                                         </label>
                                                         <input type="text" class="form-control" id="inputAmount" name="amount"
                                                             value="<?php echo $totalAmount ?>" min="1" readonly required/>
