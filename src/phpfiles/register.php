@@ -67,26 +67,26 @@ include "messages.php";
             <input type="text" placeholder="Lastname" name="lastname" required autofocus />
             <i class="fa fa-user"></i>
 
-            <input type="password" placeholder="Password" name="password" id="password1"  required />
+            <input type="password" placeholder="Password" name="password" id="password1" required />
             <i class="fa fa-key"></i>
             <p id="msgpwd"></p>
 
-            <input type="password" placeholder="Repeat Password"  id="password2" required />
+            <input type="password" placeholder="Repeat Password" id="password2" required />
             <i class="fa fa-key"></i>
 
-            <input type="phone" placeholder="Phone" name="phone"  required />
+            <input type="number" placeholder="Phone" name="phone" required />
             <i class="fa fa-key"></i>
 
             <input type="email" placeholder="Email" name="email" required />
             <i class="fa fa-key"></i>
 
-            
+
 
             <!-- <button>
                 <i class="spinner"></i>
                 <span class="state">Register</span>
             </button> -->
-            <input type="submit" name="submit" value="Register" class="btn btn-primary"/>
+            <input type="submit" name="submit" value="Register" class="btn btn-primary" />
         </form>
         <footer><a href="./login.php">Go To Login</a></footer>
         </p>
@@ -111,48 +111,90 @@ include "messages.php";
     <script src="../../assets/plugins/flot/jquery.flot.js"></script>
     <script src="../../assets/plugins/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
     <script src="../js/pages/dashboards/dashboard1.js"></script>
-    <script>
-        // var working = false;
-        // // Retrieve form data
-        // var formData = $(this).serialize();
-        // $('.login').on('submit', function (e) {
-        //     e.preventDefault();
-        //     if (working) return;
-        //     working = true;
-        //     var $this = $(this),
-        //     $state = $this.find('button > .state');
-        //     $msg =$this.find('msg')
 
-        //     $this.addClass('loading');
-        //     $state.html('Authenticating');
-        //     setTimeout(function () {
-        //         // Send data to PHP file using AJAX
-        //         $.ajax({
-        //             url: 'register_process.php', // Replace 'process.php' with the actual path to your PHP file
-        //             type: 'POST',
-        //             data: formData,
-        //             success: function (response) {
-        //                 // Handle the response from the PHP file
-        //                 // Example: display a success message or redirect to another page
-        //                 console.log(response);
-        //                 $state.html('Welcome back!');
-        //                 $this.addClass('ok');
-        //             },
-        //             error: function (xhr, status, error) {
-        //                 // Handle the error
-        //                 // Example: display an error message
-        //                 console.error(error);
-        //                 $msg.html(error);
-        //                 $state.html('Register');
-        //             },
-        //             complete: function () {
-        //                 $this.removeClass('loading');
-        //                 working = false;
-        //             }
-        //         });
-        //     }, 3000);
-        // });
+    <script>
+        function validateForm() {
+            var growerNo = document.getElementById("growerid").value;
+            var firstname = document.getElementsByName("firstname")[0].value;
+            var lastname = document.getElementsByName("lastname")[0].value;
+            var password1 = document.getElementById("password1").value;
+            var password2 = document.getElementById("password2").value;
+            var phone = document.getElementsByName("phone")[0].value;
+            var email = document.getElementsByName("email")[0].value;
+
+            var isValid = true;
+
+            // Validate growerNo (not empty)
+            if (growerNo.trim() === "") {
+                isValid = false;
+                document.getElementById("growerid").classList.add("error");
+            } else {
+                document.getElementById("growerid").classList.remove("error");
+            }
+
+            // Validate firstname (not empty and only letters)
+            if (firstname.trim() === "" || !isValidLetters(firstname)) {
+                isValid = false;
+                document.getElementsByName("firstname")[0].classList.add("error");
+            } else {
+                document.getElementsByName("firstname")[0].classList.remove("error");
+            }
+
+            // Validate lastname (not empty and only letters)
+            if (lastname.trim() === "" || !isValidLetters(lastname)) {
+                isValid = false;
+                document.getElementsByName("lastname")[0].classList.add("error");
+            } else {
+                document.getElementsByName("lastname")[0].classList.remove("error");
+            }
+
+            // Validate password (not empty and match)
+            if (password1.trim() === "" || password1 !== password2) {
+                isValid = false;
+                document.getElementById("password1").classList.add("error");
+                document.getElementById("password2").classList.add("error");
+            } else {
+                document.getElementById("password1").classList.remove("error");
+                document.getElementById("password2").classList.remove("error");
+            }
+
+            // Validate phone (not empty and at least 10 digits)
+            if (phone.trim() === "" || !isValidPhoneNumber(phone)) {
+                isValid = false;
+                document.getElementsByName("phone")[0].classList.add("error");
+            } else {
+                document.getElementsByName("phone")[0].classList.remove("error");
+            }
+
+            // Validate email (not empty and valid format)
+            if (email.trim() === "" || !isValidEmail(email)) {
+                isValid = false;
+                document.getElementsByName("email")[0].classList.add("error");
+            } else {
+                document.getElementsByName("email")[0].classList.remove("error");
+            }
+
+            return isValid;
+        }
+
+        function isValidLetters(value) {
+            var lettersRegex = /^[A-Za-z]+$/;
+            return lettersRegex.test(value);
+        }
+
+        function isValidPhoneNumber(phone) {
+            var phoneRegex = /^\d{10,}$/;
+            return phoneRegex.test(phone);
+        }
+
+        function isValidEmail(email) {
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
     </script>
+
+
+
 </body>
 
 </html>

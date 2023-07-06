@@ -78,45 +78,7 @@ include "messages.php";
     <script src="../../assets/plugins/flot/jquery.flot.js"></script>
     <script src="../../assets/plugins/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
     <script src="../js/pages/dashboards/dashboard1.js"></script>
-    <script>
-        // var working = false;
-        // // Retrieve form data
-        // var formData = $(this).serialize();
-        // $('.login').on('submit', function (e) {
-        //     e.preventDefault();
-        //     if (working) return;
-        //     working = true;
-        //     var $this = $(this),
-        //         $state = $this.find('button > .state');
-        //     $this.addClass('loading');
-        //     $state.html('Authenticating');
-        //     setTimeout(function () {
-        //         // Send data to PHP file using AJAX
-        //         $.ajax({
-        //             url: 'process.php', // Replace 'process.php' with the actual path to your PHP file
-        //             type: 'POST',
-        //             data: formData,
-        //             success: function (response) {
-        //                 // Handle the response from the PHP file
-        //                 // Example: display a success message or redirect to another page
-        //                 console.log(response);
-        //                 $state.html('Welcome back!');
-        //                 $this.addClass('ok');
-        //             },
-        //             error: function (xhr, status, error) {
-        //                 // Handle the error
-        //                 // Example: display an error message
-        //                 console.error(error);
-        //                 $state.html('Login');
-        //             },
-        //             complete: function () {
-        //                 $this.removeClass('loading');
-        //                 working = false;
-        //             }
-        //         });
-        //     }, 3000);
-        // });
-    </script>
+    
 </body>
 
 </html>

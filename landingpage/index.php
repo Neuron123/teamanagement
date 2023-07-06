@@ -79,7 +79,7 @@
                                  <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
                               </li> -->
                            <li class=" d_none get_btn">
-                              <a href="../index.php">LOGIN</a>
+                              <a href="../src/phpfiles/login.php">LOGIN</a>
                            </li>
                            <li class=" d_none get_btn">
                               <a href="../src/phpfiles/register.php">REGISTER</a>
