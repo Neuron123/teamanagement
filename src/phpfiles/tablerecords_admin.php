@@ -92,7 +92,7 @@ $conn->close();
             <div class="page-breadcrumb">
                 <div class="row align-items-center">
                     <div class="col-md-6 col-8 align-self-center">
-                        <h3 class="page-title mb-0 p-0">Table</h3>
+                        <h3 class="page-title mb-0 p-0">Tea Records</h3>
 
                         <?php
                         $messages = get_messages();
@@ -202,7 +202,7 @@ $conn->close();
                                                     </div>
                                                     <div class="mb-3">
                                                         <label for="editQuantity" class="form-label">Quantity(Kgs)</label>
-                                                        <input type="number" name="quantity" class="form-control" id="editQuantity" placeholder="Enter kgs" min="1">
+                                                        <input type="number" name="quantity" class="form-control" id="editQuantity" placeholder="Enter kgs" min="1" required>
                                                     </div>
                                                     <!-- Add more form fields as needed -->
                                                     <input type="hidden" name="record_id" id="editRecordId" value="">

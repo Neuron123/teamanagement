@@ -11,7 +11,7 @@ include "header.php";
 include "conn.php";
 
 // Fetch all users from the authentication table
-$query = "SELECT * FROM authentication";
+$query = "SELECT * FROM authentication WHERE userrole='farmer' AND (grower_no IS NULL OR grower_no = '')";;
 $result = mysqli_query($conn, $query);
 
 // Check if the query was successful

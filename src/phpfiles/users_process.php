@@ -45,6 +45,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
 }
 
 // Redirect back to the page
-header("Location: users.php");
+header("Location: farmers_with_no_grower.php");
 exit();
 ?>

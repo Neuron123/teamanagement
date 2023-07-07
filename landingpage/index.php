@@ -30,6 +30,12 @@
    <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+      <style>
+         .logo::after{
+            background-image: url('../assets/images/teafav.png');
+            background-position: center;
+         }
+      </style>
 </head>
 <!-- body -->
 
@@ -79,10 +85,10 @@
                                  <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
                               </li> -->
                            <li class=" d_none get_btn">
-                              <a href="../src/phpfiles/login.php">LOGIN</a>
+                              <a href="../src/phpfiles/login2.php">LOGIN</a>
                            </li>
                            <li class=" d_none get_btn">
-                              <a href="../src/phpfiles/register.php">REGISTER</a>
+                              <a href="../src/phpfiles/register2.php">REGISTER</a>
                            </li>
                         </ul>
                      </div>
@@ -444,7 +450,7 @@
             <div class="container">
                <div class="row">
                   <div class="col-md-12">
-                     <p>Copyright 2019 All Right Reserved By <a href="https://html.design/"> Free html Templates</a></p>
+                     <p>Copyright 2023. Built by <a href="#"> Eddah</a></p>
                   </div>
                </div>
             </div>

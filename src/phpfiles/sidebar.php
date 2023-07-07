@@ -83,9 +83,10 @@
 
 <script>
     function logout() {
+        
         // Send an AJAX request to the PHP function
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'logout.php', true);
+        xhr.open('GET', 'logout2.php', true);
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 // Handle the response here, if needed
@@ -94,5 +95,6 @@
             }
         };
         xhr.send();
+        window.location.href = 'login2.php';
     }
 </script>

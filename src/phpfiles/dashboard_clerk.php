@@ -276,7 +276,7 @@ mysqli_close($conn);
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     // Handle the response here, if needed
                     // For example, you can redirect the user to another page
-                    window.location.href = 'login.php';
+                    window.location.href = 'login2.php';
                 }
             };
             xhr.send();

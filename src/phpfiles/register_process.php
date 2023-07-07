@@ -47,12 +47,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         sendSMS($message,$phone);
 
         if($userrole == 'admin'){
-            header("Location: login.php");
+            header("Location: login2.php");
         }
         elseif($userrole == 'clerk'){
-            header("Location: login.php");
+            header("Location: login2.php");
         }else{
-            header("Location: login.php");
+            header("Location: login2.php");
         }
         
     } else {

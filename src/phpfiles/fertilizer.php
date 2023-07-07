@@ -228,6 +228,7 @@ $conn->close();
                                                     <!-- Calculate the total amount based on quantity and rate_per_kgs -->
                                                     <?php
                                                     $totalAmount = $_SESSION['total_kgs'] * ($ratePerKgs / 100);
+                                                    $totalAmount = floor($totalAmount);
                                                     ?>
 
                                                     <div class="mb-3">

@@ -77,6 +77,16 @@ function getInactiveAccountsCount()
     $row = mysqli_fetch_assoc($result);
     return $row['count'];
 }
+
+// Function to get all tea records
+function getAllTeaRecords()
+{
+    global $conn;
+    $query = "SELECT COUNT(*) AS count FROM tea_measurements";
+    $result = mysqli_query($conn, $query);
+    $row = mysqli_fetch_assoc($result);
+    return $row['count'];
+}
 ?>
 
 <body>
@@ -151,33 +161,47 @@ function getInactiveAccountsCount()
                 <div class="row">
                     <!-- Column -->
                     <div class="col-sm-4">
-                        <div class="card admincard" id="card1">
-                            <div class="card-body">
-                                <h4 class="card-title">All Farmers</h4>
-                                <h2><?php echo $allFarmersCount ?></h2>
+                        <a href="./all_farmers.php">
+                            <div class="card admincard" id="card1">
+                                <div class="card-body">
+                                    <h4 class="card-title">All Farmers</h4>
+                                    <h2>
+                                        <?php echo $allFarmersCount ?>
+                                    </h2>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <!-- Column -->
                     <!-- Column -->
                     <div class="col-sm-4">
-                        <div class="card admincard" id="card2">
-                            <div class="card-body">
-                                <h4 class="card-title">All Clerks</h4>
-                                <h2><?php echo $allClerksCount ?></h2>
+                        <a href="./all_clerks.php">
+                            <div class="card admincard" id="card2">
+                                <div class="card-body">
+                                    <h4 class="card-title">All Clerks</h4>
+                                    <h2>
+                                        <?php echo $allClerksCount ?>
+                                    </h2>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <!-- Column -->
 
                     <!-- Column -->
                     <div class="col-sm-4">
-                        <div class="card admincard" id="card3">
-                            <div class="card-body">
-                                <h4 class="card-title">Pending Fertilizer Applications</h4>
-                                <h2><?php echo $pendingApplicationsCount ?></h2>
+                        <a href="all_pending_fertilizer.php">
+                            <div class="card admincard" id="card3">
+                                <div class="card-body">
+
+                                    <h4 class="card-title">Pending Fertilizer Applications</h4>
+                                    <h2>
+                                        <?php echo $pendingApplicationsCount ?>
+                                    </h2>
+
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <!-- Column -->
 
@@ -185,34 +209,65 @@ function getInactiveAccountsCount()
 
                 <div class="row">
                     <div class="col-sm-4">
-                        <div class="card admincard" id="card4">
-                            <div class="card-body">
-                                <h4 class="card-title">Delivered Fertilizer Applications</h4>
-                                <br />
-                                <h2><?php echo $deliveredApplicationsCount ?></h2>
+                        <a href="all_delivered_fertilizer.php">
+                            <div class="card admincard" id="card4">
+                                <div class="card-body">
+                                    <h4 class="card-title">Delivered Fertilizer Applications</h4>
+                                    <br />
+                                    <h2>
+                                        <?php echo $deliveredApplicationsCount ?>
+                                    </h2>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
                     <div class="col-sm-4">
-                        <div class="card admincard" id="card5">
-                            <div class="card-body">
-                                <h4 class="card-title">Active Accounts<h5>(Farmers with grower no)</h5></h4>
-                                <h2><?php echo $activeAccountsCount ?></h2>
+                        <a href="all_grower_no.php">
+                            <div class="card admincard" id="card5">
+                                <div class="card-body">
+                                    <h4 class="card-title">Active Accounts<h5>(Farmers with grower no)</h5>
+                                    </h4>
+                                    <h2>
+                                        <?php echo $activeAccountsCount ?>
+                                    </h2>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
                     <div class="col-sm-4">
-                        <div class="card admincard" id="card6">
-                            <div class="card-body">
-                                <h4 class="card-title">Inactive Accounts<h5>(Farmers with no grower no)</h5></h4>
-                                <h2><?php echo $inactiveAccountsCount; ?></h2>
+                        <a href="farmers_with_no_grower.php">
+                            <div class="card admincard" id="card6">
+                                <div class="card-body">
+                                    <h4 class="card-title">Inactive Accounts<h5>(Farmers with no grower no)</h5>
+                                    </h4>
+                                    <h2>
+                                        <?php echo $inactiveAccountsCount; ?>
+                                    </h2>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
                 </div>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <a href="tablerecords_admin.php">
+                            <div class="card admincard" id="card1">
+                                <div class="card-body">
+                                    <h4 class="card-title">Tea Records
+                                    </h4>
+                                    <h2>
+                                        <?php echo getAllTeaRecords(); ?>
+                                    </h2>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
 
             </div>
             <!-- ============================================================== -->

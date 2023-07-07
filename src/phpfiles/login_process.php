@@ -44,13 +44,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             // Password is incorrect
             set_message('Invalid credentials', 'error');
-            header("Location: login.php");
+            header("Location: login2.php");
             exit();
         }
     } else {
         // Grower_no does not exist
         set_message('Invalid grower number', 'error');
-        header("Location: login.php");
+        header("Location: login2.php");
         exit();
     }
 
