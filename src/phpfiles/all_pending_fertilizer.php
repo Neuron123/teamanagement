@@ -77,13 +77,17 @@ $conn->close();
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="./dashboard_admin.php">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Pending Fertilizer Applications</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Pending Fertilizer
+                                        Applications</li>
                                 </ol>
                             </nav>
                         </div>
                     </div>
                 </div>
             </div>
+
+            
+
             <div class="container-fluid">
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
@@ -155,4 +159,5 @@ $conn->close();
         });
     </script>
 </body>
+
 </html>

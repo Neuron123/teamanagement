@@ -30,10 +30,10 @@
                         <i class="me-3 fa fa-table" aria-hidden="true"></i><span class="hide-menu">Tea Records</span></a>
                 </li> -->
 
-                <!-- <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                         href="fertilizer_admin.php" aria-expanded="false">
                         <i class="me-3 fa fa-leaf" aria-hidden="true"></i><span class="hide-menu">Fertilizer Applications</span></a>
-                </li> -->
+                </li>
 
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                         aria-expanded="false" onclick="logout()"><i class="me-3 fa fa-sign-out-alt"
