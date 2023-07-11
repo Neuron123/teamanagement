@@ -30,12 +30,70 @@
    <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-      <style>
-         .logo::after{
-            background-image: url('../assets/images/teafav.png');
-            background-position: center;
-         }
-      </style>
+   <style>
+      .logo::after {
+         background-image: url('../assets/images/teafav.png');
+         background-position: center;
+      }
+
+      .header {
+         position: fixed;
+         left: 0;
+         top: 0;
+         width: 100%;
+         z-index: 9999;
+         /* Ensure the footer is above other elements */
+      }
+
+      .footer {
+         position: fixed;
+         left: 0;
+         bottom: 0;
+         width: 100%;
+         background-color: #f8f8f8;
+         padding: 10px 0;
+         text-align: center;
+         font-size: 14px;
+         color: #555;
+         border-top: 1px solid #ddd;
+         z-index: 9999;
+         /* Ensure the footer is above other elements */
+      }
+
+      .content-wrapper {
+         margin-bottom: 50px;
+         /* Adjust the margin to accommodate the footer's height */
+      }
+
+      html,
+      body {
+         height: 100%;
+      }
+
+      .main-layout {
+         min-height: 100%;
+         display: flex;
+         flex-direction: column;
+      }
+
+      .content-wrapper {
+         flex: 1;
+         margin-bottom: 50px;
+         /* Adjust the margin to accommodate the footer's height */
+      }
+
+      .copyright {
+         margin-top: unset;
+      }
+
+      ul.link li a {
+         color: #1063ff;
+      }
+
+      .footer-links {
+         margin-bottom: 7%;
+      }
+   </style>
 </head>
 <!-- body -->
 
@@ -55,7 +113,10 @@
                   <div class="full">
                      <div class="center-desk">
                         <div class="logo">
-                           <a href="index.html"></a>
+                           <a href="index.php" style="color: #fff;font-size: 20px;text-align: left;">
+                              <!-- Add the system name here -->
+                              TMS
+                           </a>
                         </div>
                      </div>
                   </div>
@@ -69,7 +130,7 @@
                      <div class="collapse navbar-collapse" id="navbarsExample04">
                         <ul class="navbar-nav mr-auto">
                            <li class="nav-item active">
-                              <a class="nav-link" href="index.html"> Home </a>
+                              <a class="nav-link" href="index.php"> Home </a>
                            </li>
                            <li class="nav-item">
                               <a class="nav-link" href="#aboutus">About</a>
@@ -77,18 +138,16 @@
                            <li class="nav-item">
                               <a class="nav-link" href="#features">Features</a>
                            </li>
-
                            <li class="nav-item">
                               <a class="nav-link" href="#contact">Contact</a>
                            </li>
-                           <!-- <li class="nav-item d_none">
-                                 <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-                              </li> -->
-                           <li class=" d_none get_btn">
-                              <a href="../src/phpfiles/login2.php">LOGIN</a>
+                        </ul>
+                        <ul class="navbar-nav ml-auto">
+                           <li class="nav-item">
+                              <a class="nav-link" href="../src/phpfiles/login2.php">LOGIN</a>
                            </li>
-                           <li class=" d_none get_btn">
-                              <a href="../src/phpfiles/register2.php">REGISTER</a>
+                           <li class="nav-item">
+                              <a class="nav-link" href="../src/phpfiles/register2.php">REGISTER</a>
                            </li>
                         </ul>
                      </div>
@@ -140,45 +199,14 @@
          </div>
       </div>
    </div>
-   <!-- three_box -->
-   <!-- hottest -->
-   <!-- <div  class="hottest">
-         <div class="container">
-            <div class="row d_flex">
-               <div class="col-md-5">
-                  <div class="titlepage">
-                     <h2>World’s Hottest Destinations <br>for Vegans</h2>
-                  </div>
-               </div>
-               <div class="col-md-7">
-                  <div class="hottest_box">
-                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined </p>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div> -->
-   </div>
-   </div>
-   <!-- end hottest -->
+   <!-- end three_box -->
    <!-- choose  section -->
    <div class="choose ">
-      <!-- <div class="container">
-            <div class="row">
-               <div class="col-md-8">
-                  <div class="titlepage">
-                     <h2>Why Choose Us? </h2>
-                     <p>there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined  </p>
-                  </div>
-               </div>
-            </div>
-         </div> -->
       <div class="container-fluid" id="aboutus">
          <div class="row d_flex">
             <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12">
                <div class="padding_with">
                   <div class="row">
-
                      <div class="col-md-6 padding_bottom">
                         <div class="choose_box">
                            <i><img src="images/icon1.png" alt="#" /></i>
@@ -220,7 +248,6 @@
                            </div>
                         </div>
                      </div>
-
                   </div>
                </div>
             </div>
@@ -231,221 +258,86 @@
             </div>
          </div>
       </div>
-      <div class="container">
-         <div class="row">
-            <!-- <div class="col-md-5">
-                  <a class="read_more" href="#">Read More</a>
-               </div> -->
+   </div>
+   <!-- end choose  section -->
+   </div>
+
+   <!--contact us -->
+   <div class="container">
+      <div class="row">
+         <div class="col-md-4">
+            <div class="titlepage">
+               <h2>Contact Us</h2>
+            </div>
+         </div>
+         <div class="col-md-12">
+            <form id="request" class="main_form">
+               <div class="row">
+                  <div class="col-md-3 ">
+                     <input class="contactus" placeholder="Full Name" type="type" name="Full Name">
+                  </div>
+                  <div class="col-md-3">
+                     <input class="contactus" placeholder="Email" type="type" name="Email">
+                  </div>
+                  <div class="col-md-3">
+                     <input class="contactus" placeholder="Phone Number" type="type" name="Phone Number">
+                  </div>
+                  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
+                     <ul class="social_icon">
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                     </ul>
+                  </div>
+                  <div class="col-md-8">
+                     <textarea class="contactus1" placeholder="Message" type="type" Message="Name">Message </textarea>
+                  </div>
+                  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                     <button class="send_btn">Send</button>
+                  </div>
+               </div>
+            </form>
+         </div>
+         <div class="col-md-3 border_right">
+            <ul class="location_icon">
+               <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a> Nairobi, Kenya</li>
+               <li><a href="#"><i class="fa fa-volume-control-phone" aria-hidden="true"></i></a> +71 9087654321
+               </li>
+               <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>demo@gmail.com</li>
+            </ul>
+         </div>
+         <div class="col-md-3 border_right footer-links">
+            <h3>Useful Link</h3>
+            <ul class="link">
+               <li><a href="#">Home </a></li>
+               <li><a href="#">About </a> </li>
+               <li><a href="#">Features </a></li>
+               <li><a href="#">Contact </a> </li>
+            </ul>
+         </div>
+         <div class="col-md-3 border_right footer-links">
+            <h3>Menus</h3>
+            <ul class="link">
+               <li><a href="index.php">Home</a></li>
+               <li><a href="#aboutus">About</a></li>
+               <li><a href="#features">Features</a></li>
+               <li><a href="#contact">Contact</a></li>
+            </ul>
+         </div>
+         <div class="col-md-3">
+            <form class="bottom_form">
+               <h3>Newsletter</h3>
+               <input class="enter" placeholder="Enter your email" type="text" name="Enter your email">
+               <button class="sub_btn">subscribe</button>
+            </form>
          </div>
       </div>
    </div>
-   </div>
-   <!-- end choose  section -->
-   <!-- product  section -->
 
-   <!-- <div class="product" id="features">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-6">
-                  <div class="titlepage">
-                     <h2>Our Features</h2>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="container-fluid">
-            <div class="row">
-               <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 padding_left0">
-                  <div class="product_box">
-                     <figure><img src="images/product1.jpg" alt="#"/></figure>
-                     <h3 class="black">Tea Records</h3>
-                  </div>
-               </div>
-               <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
-                  <div class="product_box">
-                     <figure><img src="images/product2.jpg" alt="#"/></figure>
-                     <h3 >weat</h3>
-                  </div>
-               </div>
-               <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 padding_right0">
-                  <div class="product_box">
-                     <figure><img src="images/product3.jpg" alt="#"/></figure>
-                     <h3>fruit</h3>
-                  </div>
-               </div>
-               <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 padding_left0">
-                  <div class="product_box">
-                     <figure><img src="images/product4.jpg" alt="#"/></figure>
-                     <h3>sunflowere</h3>
-                  </div>
-               </div>
-               <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 padding_right0">
-                  <div class="product_box">
-                     <figure><img src="images/product5.jpg" alt="#"/></figure>
-                     <h3>Livestock</h3>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div> -->
-
-   <!-- end product  section -->
-   <!-- about -->
-   <!-- <div class="about">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="titlepage">
-                     <h2>People Says About Farm</h2>
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-               <div class="col-md-12">
-                  <div id="myCarousel" class="carousel slide about_Carousel " data-ride="carousel">
-                     <ol class="carousel-indicators">
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li>
-                     </ol>
-                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                           <div class="container">
-                              <div class="carousel-caption ">
-                                 <div class="row">
-                                    <div class="col-md-12">
-                                       <div class="test_box">
-                                          <i><img src="images/tes1.png" alt="#"/></i>
-                                          <h4>jhone Du</h4>
-                                          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,</p>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="carousel-item">
-                           <div class="container">
-                              <div class="carousel-caption">
-                                 <div class="row">
-                                    <div class="col-md-12">
-                                       <div class="test_box">
-                                          <i><img src="images/tes1.png" alt="#"/></i>
-                                          <h4>jhone Du</h4>
-                                          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,</p>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="carousel-item">
-                           <div class="container">
-                              <div class="carousel-caption">
-                                 <div class="row">
-                                    <div class="col-md-12">
-                                       <div class="test_box">
-                                          <i><img src="images/tes1.png" alt="#"/></i>
-                                          <h4>jhone Du</h4>
-                                          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,</p>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                     <span class="sr-only">Previous</span>
-                     </a>
-                     <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                     <span class="sr-only">Next</span>
-                     </a>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div> -->
-   <!-- end about -->
-   </div>
    <!--  footer -->
    <footer id="contact">
       <div class="footer">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-4">
-                  <div class="titlepage">
-                     <h2>Contact Us</h2>
-                  </div>
-               </div>
-               <div class="col-md-12">
-                  <form id="request" class="main_form">
-                     <div class="row">
-                        <div class="col-md-3 ">
-                           <input class="contactus" placeholder="Full Name" type="type" name="Full Name">
-                        </div>
-                        <div class="col-md-3">
-                           <input class="contactus" placeholder="Email" type="type" name="Email">
-                        </div>
-                        <div class="col-md-3">
-                           <input class="contactus" placeholder="Phone Number" type="type" name="Phone Number">
-                        </div>
-                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
-                           <ul class="social_icon">
-                              <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                           </ul>
-                        </div>
-                        <div class="col-md-8">
-                           <textarea class="contactus1" placeholder="Message" type="type"
-                              Message="Name">Message </textarea>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                           <button class="send_btn">Send</button>
-                        </div>
-                     </div>
-                  </form>
-               </div>
-               <div class="col-md-3 border_right">
-                  <ul class="location_icon">
-                     <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a> Nairobi, Kenya</li>
-                     <li><a href="#"><i class="fa fa-volume-control-phone" aria-hidden="true"></i></a> +71 9087654321
-                     </li>
-                     <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>demo@gmail.com</li>
-                  </ul>
-               </div>
-               <div class="col-md-3 border_right">
-                  <h3>Useful Link</h3>
-                  <ul class="link">
-                     <li><a href="#">Home </a></li>
-                     <li><a href="#">About </a> </li>
-                     <li><a href="#">Features </a></li>
-                     <li><a href="#">Contact </a> </li>
-                     <!-- <li><a href="#">believable. If   </a></li> -->
-                  </ul>
-               </div>
-               <div class="col-md-3 border_right">
-                  <h3>Menus</h3>
-                  <ul class="link">
-                     <li><a href="index.html">Home</a></li>
-                     <li><a href="#aboutus">About</a></li>
-                     <li><a href="#features">Features</a></li>
-                     <li><a href="#contact">Contact</a></li>
-                  </ul>
-               </div>
-               <div class="col-md-3">
-                  <form class="bottom_form">
-                     <h3>Newsletter</h3>
-                     <input class="enter" placeholder="Enter your email" type="text" name="Enter your email">
-                     <button class="sub_btn">subscribe</button>
-                  </form>
-               </div>
-            </div>
-         </div>
          <div class="copyright">
             <div class="container">
                <div class="row">

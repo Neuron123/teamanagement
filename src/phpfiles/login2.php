@@ -62,6 +62,35 @@ include "messages.php";
         .wrapper {
             width: 40%;
         }
+
+        .header {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            z-index: 9999;
+            /* Ensure the footer is above other elements */
+        }
+
+        .footer {
+            /* position: fixed;
+         left: 0;
+         bottom: 0;
+         width: 100%;
+         background-color: #f8f8f8;
+         padding: 10px 0;
+         text-align: center;
+         font-size: 14px;
+         color: #555;
+         border-top: 1px solid #ddd;
+         z-index: 9999; */
+            /* Ensure the footer is above other elements */
+            background-color: #fff;
+        }
+
+        .login {
+            margin-top: 154px;
+        }
     </style>
 </head>
 <!-- body -->
@@ -82,7 +111,10 @@ include "messages.php";
                         <div class="full">
                             <div class="center-desk">
                                 <div class="logo">
-                                    <!-- <a href="index.php"></a> -->
+                                    <a href="" style="color: #fff;font-size: 20px;text-align: left;">
+                                        <!-- Add the system name here -->
+                                        TMS
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -97,7 +129,7 @@ include "messages.php";
                             <div class="collapse navbar-collapse" id="navbarsExample04">
                                 <ul class="navbar-nav mr-auto">
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="index.html"> Home </a>
+                                        <a class="nav-link" href="../../index.php"> Home </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#aboutus">About</a>
@@ -179,81 +211,9 @@ include "messages.php";
     <!--  footer -->
     <footer id="contact">
         <div class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="titlepage">
-                            <h2>Contact Us</h2>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <form id="request" class="main_form">
-                            <div class="row">
-                                <div class="col-md-3 ">
-                                    <input class="contactus" placeholder="Full Name" type="type" name="Full Name">
-                                </div>
-                                <div class="col-md-3">
-                                    <input class="contactus" placeholder="Email" type="type" name="Email">
-                                </div>
-                                <div class="col-md-3">
-                                    <input class="contactus" placeholder="Phone Number" type="type" name="Phone Number">
-                                </div>
-                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
-                                    <ul class="social_icon">
-                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-                                        </li>
-                                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-8">
-                                    <textarea class="contactus1" placeholder="Message" type="type"
-                                        Message="Name">Message </textarea>
-                                </div>
-                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                                    <button class="send_btn">Send</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-md-3 border_right">
-                        <ul class="location_icon">
-                            <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a> Nairobi, Kenya</li>
-                            <li><a href="#"><i class="fa fa-volume-control-phone" aria-hidden="true"></i></a> +71
-                                9087654321
-                            </li>
-                            <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>demo@gmail.com</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3 border_right">
-                        <h3>Useful Link</h3>
-                        <ul class="link">
-                            <li><a href="#">Home </a></li>
-                            <li><a href="#">About </a> </li>
-                            <li><a href="#">Features </a></li>
-                            <li><a href="#">Contact </a> </li>
-                            <!-- <li><a href="#">believable. If   </a></li> -->
-                        </ul>
-                    </div>
-                    <div class="col-md-3 border_right">
-                        <h3>Menus</h3>
-                        <ul class="link">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="#aboutus">About</a></li>
-                            <li><a href="#features">Features</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3">
-                        <form class="bottom_form">
-                            <h3>Newsletter</h3>
-                            <input class="enter" placeholder="Enter your email" type="text" name="Enter your email">
-                            <button class="sub_btn">subscribe</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+
+
+
             <div class="copyright">
                 <div class="container">
                     <div class="row">

@@ -70,6 +70,10 @@
                 ?>
 
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                        aria-expanded="false" onclick="logout()"><i class="me-3 fa fa-sign-out-alt"
+                                            aria-hidden="true"></i><span class="hide-menu">Login</span></a></li>
+
+                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                         aria-expanded="false" onclick="logout()"><i class="me-3 fa fa-sign-out-alt"
                             aria-hidden="true"></i><span class="hide-menu">Logout</span></a></li>
 

@@ -67,6 +67,39 @@ include "messages.php";
         .wrapper {
             width: 40%;
         }
+
+        .header {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            z-index: 9999;
+            /* Ensure the footer is above other elements */
+        }
+
+        .login {
+            margin-top: 154px;
+            margin-bottom: 154px;
+        }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #f8f8f8;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 14px;
+            color: #555;
+            border-top: 1px solid #ddd;
+            z-index: 9999;
+            /* Ensure the footer is above other elements */
+        }
+
+        .copyright {
+            margin-top: unset;
+        }
     </style>
 </head>
 <!-- body -->
@@ -87,7 +120,10 @@ include "messages.php";
                         <div class="full">
                             <div class="center-desk">
                                 <div class="logo">
-                                    <!-- <a href="index.php"></a> -->
+                                    <a href="" style="color: #fff;font-size: 20px;text-align: left;">
+                                        <!-- Add the system name here -->
+                                        TMS
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -102,7 +138,7 @@ include "messages.php";
                             <div class="collapse navbar-collapse" id="navbarsExample04">
                                 <ul class="navbar-nav mr-auto">
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="index.html"> Home </a>
+                                        <a class="nav-link" href="../../index.php"> Home </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#aboutus">About</a>
