@@ -91,6 +91,10 @@ include "messages.php";
         .login {
             margin-top: 154px;
         }
+
+        label{
+            color: blue;
+        }
     </style>
 </head>
 <!-- body -->

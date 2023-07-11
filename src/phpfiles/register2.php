@@ -100,6 +100,10 @@ include "messages.php";
         .copyright {
             margin-top: unset;
         }
+
+        label{
+            color: blue;
+        }
     </style>
 </head>
 <!-- body -->
